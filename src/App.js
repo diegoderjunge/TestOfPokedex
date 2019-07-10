@@ -1,5 +1,11 @@
 import React from 'react'
 import Pokedex from './components/Pokedex/Pokedex'
+import Pokemon from './components/Pokemon/Pokemon'
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+} from "react-router-dom"
 
 function App() {
   const defaultProps = {
@@ -16,7 +22,20 @@ function App() {
   }
   return (
     <div className="App">
-      <Pokedex pokemons={defaultProps.pokemon} />
+      <Router>
+        <Switch>
+          <Route
+            path="/"
+            exact
+            render={(props) => <Pokedex {...props} pokemons={defaultProps.pokemon} />}
+          />
+          <Route
+            path="/:id"
+            exact
+            render={(props) => <Pokemon {...props} pokemons={defaultProps.pokemon} />}
+          />
+        </Switch>
+      </Router>
     </div>
   )
 }
