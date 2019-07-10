@@ -30,7 +30,7 @@ function App() {
             render={props => <Pokedex {...props} pokemons={defaultProps.pokemon} />}
           />
           <Route
-            path="/:id"
+            path="/pokemon/:id"
             exact
             render={props => <Pokemon {...props} pokemons={defaultProps.pokemon} />}
           />
