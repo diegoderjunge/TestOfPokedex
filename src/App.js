@@ -27,12 +27,12 @@ function App() {
           <Route
             path="/"
             exact
-            render={(props) => <Pokedex {...props} pokemons={defaultProps.pokemon} />}
+            render={props => <Pokedex {...props} pokemons={defaultProps.pokemon} />}
           />
           <Route
             path="/:id"
             exact
-            render={(props) => <Pokemon {...props} pokemons={defaultProps.pokemon} />}
+            render={props => <Pokemon {...props} pokemons={defaultProps.pokemon} />}
           />
         </Switch>
       </Router>
