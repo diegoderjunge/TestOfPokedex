@@ -1,6 +1,8 @@
 import React from 'react'
 import Pokedex from './components/Pokedex/Pokedex'
 import Pokemon from './components/Pokemon/Pokemon'
+import Layout from './components/Layout/Layout'
+import Home from './components/Pages/Home'
 import {
   BrowserRouter as Router,
   Route,
@@ -27,13 +29,19 @@ function App() {
           <Route
             path="/"
             exact
-            render={props => <Pokedex {...props} pokemons={defaultProps.pokemon} />}
+            render={props => <Home {...props} pokemons={defaultProps.pokemon} />}
           />
           <Route
             path="/pokemon/:id"
             exact
             render={props => <Pokemon {...props} pokemons={defaultProps.pokemon} />}
           />
+          <Route
+            path="/layout"
+            exact
+            render={props => <Layout {...props}/>}
+          />
+          
         </Switch>
       </Router>
     </div>
